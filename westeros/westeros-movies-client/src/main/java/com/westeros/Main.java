@@ -37,7 +37,8 @@ public class Main {
 //        var detailedMovies = new ArrayList<MovieDto>();
 //        var allCredits = new ArrayList<CreditsDto>();
 
-//        for (var movie : movies) {
+//        for (var movie : movies)
+        {
             /**
              * dla każdego filmu pobieram jego szczegóły
              */
@@ -57,6 +58,6 @@ public class Main {
 //                    credits.getCast()) {
 //                ActorDto detailedActor = moviesClient.getActorDetails(actorSummary.getId());
 //            }
-//        }
+        }
     }
 }
