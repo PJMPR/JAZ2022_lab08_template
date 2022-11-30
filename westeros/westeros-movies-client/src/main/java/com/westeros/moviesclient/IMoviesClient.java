@@ -14,7 +14,7 @@ public interface IMoviesClient {
      * @param to data do
      * @return
      */
-    PagedResultDto<MovieSummaryDto> getByDateRange(LocalDate from, LocalDate to);
+    PagedResultDto getByDateRange(LocalDate from, LocalDate to);
 
     /**
      * j.w. ale dodatkowo w parametrze przyjmuje nr strony wyników
@@ -24,7 +24,7 @@ public interface IMoviesClient {
      * @param page nr strony
      * @return
      */
-    PagedResultDto<MovieSummaryDto> getByDateRange(LocalDate from, LocalDate to, int page);
+    PagedResultDto getByDateRange(LocalDate from, LocalDate to, int page);
 
     /**
      * Zwraca dokładne informacje o filmie o zadanym id.

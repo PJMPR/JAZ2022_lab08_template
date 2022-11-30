@@ -1,5 +1,7 @@
 package com.westeros.moviesclient.contract;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -10,6 +12,7 @@ public class MovieDto extends MovieSummaryDto{
     private int budget;
     private List<GenreSummaryDto> genres;
     private String homepage;
+    @JsonProperty("original_language")
     private String originalLanguage;
     private String originalTitle;
     private String overview;

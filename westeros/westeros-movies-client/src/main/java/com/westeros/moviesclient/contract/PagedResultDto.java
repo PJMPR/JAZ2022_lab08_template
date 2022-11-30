@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-public class PagedResultDto<TResult> {
+public class PagedResultDto {
 
-    private List<TResult> results;
+    private List<MovieSummaryDto> results;
     @JsonProperty("page")
     private int page;
 
@@ -16,11 +16,11 @@ public class PagedResultDto<TResult> {
     @JsonProperty("total_results")
     private int totalResults;
 
-    public List<TResult> getResults() {
+    public List<MovieSummaryDto> getResults() {
         return results;
     }
 
-    public void setResults(List<TResult> results) {
+    public void setResults(List<MovieSummaryDto> results) {
         this.results = results;
     }
 
