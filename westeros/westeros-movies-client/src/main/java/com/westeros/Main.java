@@ -25,7 +25,7 @@ public class Main {
         /**
          * pobieram pierwszą strone wyników filmów które zostały wyprodukowane w zeszłym miesiącu
          */
-//        PagedResultDto<MovieSummaryDto> result = moviesClient.getByDateRange(from, to);
+//        PagedResultDto result = moviesClient.getByDateRange(from, to);
 //        var movies = result.getResults();
 
         /**
