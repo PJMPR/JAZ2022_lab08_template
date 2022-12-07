@@ -1,10 +1,12 @@
-package com.westeros.moviesclient.contract;
+package com.westeros.moviesclient.contract.dictionaries;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class LanguageSummaryDto {
 
+    @JsonProperty("english_name")
     private String englishName;
     private String name;
-    private String isoCode;
 
     public String getEnglishName() {
         return englishName;
@@ -22,11 +24,4 @@ public class LanguageSummaryDto {
         this.name = name;
     }
 
-    public String getIsoCode() {
-        return isoCode;
-    }
-
-    public void setIsoCode(String isoCode) {
-        this.isoCode = isoCode;
-    }
 }

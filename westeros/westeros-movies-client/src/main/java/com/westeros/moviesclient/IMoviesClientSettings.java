@@ -1,5 +1,7 @@
 package com.westeros.moviesclient;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 public interface IMoviesClientSettings {
 
     /**
@@ -20,4 +22,14 @@ public interface IMoviesClientSettings {
      * @return
      */
     int getApiVersion();
+
+    default UriComponentsBuilder getUrlBuilder(){
+        return UriComponentsBuilder
+                .newInstance()
+                .scheme("http")
+                .host(getBaseUrl())
+                .pathSegment(getApiVersion() + "")
+                .queryParam("api_key", getApiKey());
+    }
+
 }

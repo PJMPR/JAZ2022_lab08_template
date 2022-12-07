@@ -1,9 +1,13 @@
 package com.westeros.moviesclient.contract;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDate;
 import java.util.List;
 
 public class ActorDto extends ActorSummaryDto{
+
+    @JsonProperty("also_known_as")
     private List<String> alsoKnownAs;
     private String biography;
     private LocalDate birthday;

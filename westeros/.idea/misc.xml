@@ -4,6 +4,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/westeros-movies-client/pom.xml" />
+        <option value="$PROJECT_DIR$/westeros-data/pom.xml" />
+        <option value="$PROJECT_DIR$/westeros-tools/pom.xml" />
+        <option value="$PROJECT_DIR$/westeros-movies-updater/pom.xml" />
       </list>
     </option>
   </component>

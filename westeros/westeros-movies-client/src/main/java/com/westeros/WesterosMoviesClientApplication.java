@@ -1,6 +1,7 @@
 package com.westeros;
 
 import com.westeros.moviesclient.IMoviesClient;
+import com.westeros.moviesclient.IMoviesDictionariesClient;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,11 +10,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WesterosMoviesClientApplication implements CommandLineRunner {
 
 
-//    IMoviesClient client;
-//
-//    public WesterosMoviesClientApplication(IMoviesClient client) {
-//        this.client = client;
-//    }
+    IMoviesClient client;
+    final IMoviesDictionariesClient dictClient;
+
+    public WesterosMoviesClientApplication(IMoviesClient client, IMoviesDictionariesClient dictClient) {
+        this.client = client;
+        this.dictClient = dictClient;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(WesterosMoviesClientApplication.class, args);

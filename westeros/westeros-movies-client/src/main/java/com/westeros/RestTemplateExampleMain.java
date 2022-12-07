@@ -49,6 +49,7 @@ public class RestTemplateExampleMain {
    static class UserDto{
         @JsonProperty("gender")
         private String gender;
+
         private String email;
         private String phone;
 

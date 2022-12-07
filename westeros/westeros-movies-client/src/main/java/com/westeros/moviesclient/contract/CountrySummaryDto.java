@@ -1,9 +1,10 @@
 package com.westeros.moviesclient.contract;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CountrySummaryDto {
 
     String name;
-    String isoCode;
 
     public String getName() {
         return name;
@@ -13,11 +14,4 @@ public class CountrySummaryDto {
         this.name = name;
     }
 
-    public String getIsoCode() {
-        return isoCode;
-    }
-
-    public void setIsoCode(String isoCode) {
-        this.isoCode = isoCode;
-    }
 }

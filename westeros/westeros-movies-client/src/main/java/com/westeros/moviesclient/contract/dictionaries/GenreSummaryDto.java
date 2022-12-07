@@ -1,4 +1,4 @@
-package com.westeros.moviesclient.contract;
+package com.westeros.moviesclient.contract.dictionaries;
 
 public class GenreSummaryDto {
     private int id;

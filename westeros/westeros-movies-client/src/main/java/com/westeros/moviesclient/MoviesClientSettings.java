@@ -1,5 +1,7 @@
 package com.westeros.moviesclient;
 
+import org.springframework.stereotype.Component;
+
 public class MoviesClientSettings implements IMoviesClientSettings {
     private String apiKey;
     private String baseUrl;

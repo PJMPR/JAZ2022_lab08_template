@@ -1,10 +1,13 @@
 package com.westeros.moviesclient.contract;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ActorSummaryDto {
 
     private int id;
     private String name;
     private String character;
+    @JsonProperty("profile_path")
     private String profilePath;
 
     public int getId() {
