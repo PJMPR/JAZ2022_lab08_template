@@ -8,15 +8,11 @@ import java.time.LocalDate;
 public class MoviesClient implements IMoviesClient {
 
     RestTemplate restClient;
-    String baseUrl;
-    String apiKey;
-    int version;
 
-    public MoviesClient(IMoviesClientSettings settings) {
+    IMoviesClientUriBuilderProvider provider;
+    public MoviesClient(IMoviesClientUriBuilderProvider provider) {
         restClient = new RestTemplate();
-        this.baseUrl=settings.getBaseUrl();
-        this.apiKey= settings.getApiKey();
-        this.version= settings.getApiVersion();
+        this.provider=provider;
     }
 
     @Override
@@ -31,7 +27,11 @@ public class MoviesClient implements IMoviesClient {
 
     @Override
     public MovieDto getMovie(int id) {
-        String url = baseUrl+"/"+version+"/movie/"+id;//brakuje api_key
+        String url = provider.builder()
+                .pathSegment("movie")
+                .pathSegment(""+id)
+                .build()
+                .toUriString();
         var response = restClient.getForEntity(url, MovieDto.class).getBody();
         return response;
     }

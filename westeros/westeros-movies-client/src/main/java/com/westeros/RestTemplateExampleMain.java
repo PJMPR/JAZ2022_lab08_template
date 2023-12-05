@@ -30,6 +30,8 @@ public class RestTemplateExampleMain {
         /**
          * wysyłamy rządanie HTTP GET
          */
+
+
         ResponseEntity<RandomUserResultsDto> response
                 = restTemplate.getForEntity(randomUserUrl , RandomUserResultsDto.class);
         /**

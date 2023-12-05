@@ -1,20 +1,24 @@
 package com.westeros;
 
 import com.westeros.moviesclient.IMoviesClient;
-import com.westeros.moviesclient.IMoviesClientSettings;
+import com.westeros.moviesclient.IMoviesClientUriBuilderProvider;
 import com.westeros.moviesclient.MoviesClient;
-import com.westeros.moviesclient.MoviesClientSettings;
+import com.westeros.moviesclient.MoviesClientUriBuilderProvider;
 import com.westeros.moviesclient.contract.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class Main {
 
+    /**
+     * Proszę uzupełnić te pole kluczem do api
+     */
+    static String API_KEY = "api_key";
+
     public static void main(String[] args){
 
-        IMoviesClientSettings settings = new MoviesClientSettings("api_key", "base_url", 3);
-        IMoviesClient moviesClient = new MoviesClient(settings);
+        IMoviesClientUriBuilderProvider urlBuilderProvider = new MoviesClientUriBuilderProvider(API_KEY, "api.themoviedb.org", 3);
+        IMoviesClient moviesClient = new MoviesClient(urlBuilderProvider);
         CheckItOut(moviesClient);
     }
 
@@ -25,8 +29,8 @@ public class Main {
         /**
          * pobieram pierwszą strone wyników filmów które zostały wyprodukowane w zeszłym miesiącu
          */
-//        PagedResultDto result = moviesClient.getByDateRange(from, to);
-//        var movies = result.getResults();
+        PagedResultDto result = moviesClient.getByDateRange(from, to);
+        var movies = result.getResults();
 
         /**
          * pobieram wszystkie strony wyników
